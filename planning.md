@@ -27,6 +27,7 @@ In the event that you need to put something like this down:
 ```Stick:
 	Long, Brown and Sticky,
 	Context: Terrible Jokes```
+
 Use this syntax.
 //(d)"Stick":{
 	"Long, Brown and Sticky".def(),

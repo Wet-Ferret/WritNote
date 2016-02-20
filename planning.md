@@ -34,7 +34,8 @@ Stick:
 
 Use this syntax.
 
-```//(d)"Stick":{
+```
+//(d)"Stick":{
 	"Long, Brown and Sticky".def(),
 	"Terrible Jokes".ctext(),
 };

@@ -2,7 +2,7 @@
 Programming Style NoteTaking
 Concept by Ennis Massey, 6/02/2016
 
-# Possible coding format
+# Possible format
 
 ## Formatting
 

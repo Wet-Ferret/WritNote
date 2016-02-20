@@ -18,9 +18,15 @@ and convert it into a Javascript parser as opposed to a C based parser. This all
 into a web-app environment.
 
 ## Conception
-@MicroTransactionsMatterToo came up with this idea when, while in school, he started taking notes using a Python/C++ format.
+[@MicroTransactionsMatterToo](https://github.com/MicroTransactionsMatterToo "MicroTransactionsMatterToo - Profile") came up with this idea when, while in school, he started taking notes using a Python/C++ format.
 He found this method to be a lot more effective than normal, verbose, note-taking. In effect he was using
 programmers short-hand. Then when he found out about [hack.summit()](https://hacksummit.org "hack.summit() - Home")
 he decided to try and make it into something anybody could use.
 
-## Planning
+## Team
+The hackathon coding team consisted of:
+<ol>
+    <li><a href="https://github.com/dvlpstrcrispin">@dvlpstrcrispin</a></li>
+    <li>@MicroTransactionsMatterToo</li>
+</ol>
+

@@ -1,2 +1,3 @@
 # WritNote
-This'll help cloning.
+Copyright Wet-Ferret 2016
+

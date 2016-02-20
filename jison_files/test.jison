@@ -8,6 +8,7 @@
 
 \s+		/* Skips whitespace */
 [a-zA-Z]+	return 'STRING'
+[\"]?[a-zA-Z0-9]+[\"]?	return 'STRINGARG'
 <<EOF>>		return 'EOF'
 
 /lex
@@ -17,11 +18,13 @@
 %% /* Language grammar */
 
 output
-	: out EOF
-		{print($1); return $1;}
+	: EOF out
+		{return $1;}
 	;
 
 out
-	: STRING 
-		{$$ = String($1);}
+	: STRING
+		{$$ = $1.length;}
+	| STRINGARG
+		{$$ = $1}
 	;

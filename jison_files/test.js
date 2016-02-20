@@ -87,7 +87,7 @@ case 1:
 print($$[$0-1]); return $$[$0-1];
 break;
 case 2:
-this.$ = String(STRING);
+this.$ = String($$[$0]);
 break;
 }
 },
@@ -575,12 +575,14 @@ case 0:/* Skips whitespace */
 break;
 case 1:return 6
 break;
-case 2:return 5
+case 2:return 'STRINGARG'
+break;
+case 3:return 5
 break;
 }
 },
-rules: [/^(?:\s+)/,/^(?:[a-zA-Z]+)/,/^(?:$)/],
-conditions: {"INITIAL":{"rules":[0,1,2],"inclusive":true}}
+rules: [/^(?:\s+)/,/^(?:[a-zA-Z]+)/,/^(?:")/,/^(?:$)/],
+conditions: {"INITIAL":{"rules":[0,1,2,3],"inclusive":true}}
 });
 return lexer;
 })();

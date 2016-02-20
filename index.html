@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <title>WritNote</title>
     <script language="javascript">
         var changeText = function () {
@@ -13,7 +14,7 @@
     </script>
 </head>
 <body onload="changeText()">
-    <div id="header"><p>[icon goes here] - <b>WritNote</b></p></div>
+    <div id="header"><p><img src="logo.png" /> <a href="index.html"><b>WritNote</b></a> - <a href="/about.html">About</a> </p></div>
     <div id="work_area">
         <form id="user_form">
             <textarea name="content_body" id="user_input" onkeypress="changeText()" onkeyup="changeText()">This is a sensible default.</textarea>

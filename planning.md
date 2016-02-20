@@ -62,7 +62,7 @@ Additional Properties could be specified as such
 
 `"<text here>".i();` = *italics*
 
-`"<text here>".u();` = <u>underlined<u> * - editor's note, this dosen't work on Github Markdown.*
+`"<text here>".u();` = <u>underlined<u> - *editor's note, this dosen't work on Github Markdown.*
 
 `"<text here>".Ss();` = <sup>superscript<sup>
 

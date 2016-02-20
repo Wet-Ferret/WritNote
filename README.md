@@ -16,3 +16,8 @@ and [LEX](http://dinosaur.compilertools.net/lex/index.html "LEX Manual"). As thi
 to use a tool called [Jison](http://zaa.ch/jison/ "Jison - Home"). This tool allows you to use Bison type syntax
 and convert it into a Javascript parser as opposed to a C based parser. This allows us to effectively integrate it
 into a web-app environment.
+
+## Conception
+Ennis came up with this idea when, while in school, he started taking notes using a Python/C++ format.
+He found this method to be a lot more effective than normal, verbose, note-taking. In effect he was using
+programmers short-hand. Then when he found out about [hack.summit()]()

@@ -12,4 +12,4 @@ and other such stuff
 The implentation of this concept is going to be primarily achieved through the
 use of parser creation languages such as [Bison](https://www.gnu.org/software/bison/ "Bison GNU Project"),
 [Yacc](http://dinosaur.compilertools.net/yacc/, "Yet Another Compiler"), [Flex](https://en.wikipedia.org/wiki/Flex_(lexical_analyser_generator) "Flex - Wikipedia")
-and [LEX]()
+and [LEX](http://dinosaur.compilertools.net/lex/index.html "LEX Manual")

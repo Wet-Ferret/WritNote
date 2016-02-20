@@ -72,5 +72,6 @@ atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
-
+# Vim buffers
+*.swp
 # Created by .ignore support plugin (hsz.mobi)

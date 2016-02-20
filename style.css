@@ -1,0 +1,17 @@
+/**
+ * Created by crispin on 20/02/16.
+ */
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+#header {
+    background-color: green;
+    text-align: center;
+    color: white;
+}
+#user_form {
+    text-align: left;
+}
+#computer_form {
+    text-align: right;
+}

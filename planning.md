@@ -8,12 +8,13 @@ Concept by Ennis Massey, 6/02/2016
 
 ### Headings
 Each consequent one could be one heading smaller unless 
-specified using html type heading tags (h1, h2, e.t.c.)
+specified using html type heading tags (h1, h2, etc.)
 example: `//(h1) (Text here)`
 
 ### Lists
 List are defined as such.
-```listName: [
+```
+listName: [
 	'item1',
 	'item2',
 ];```
@@ -24,7 +25,8 @@ Hyperlinks are defined as such.
 
 ### Definitions
 In the event that you need to put something like this down:
-```Stick:
+```
+Stick:
 	Long, Brown and Sticky,
 	Context: Terrible Jokes
 ```
@@ -39,7 +41,8 @@ Use this syntax.
 
 ### Step-by-step
 Uses a switch like format to produce instructions to do a task, step-by-step
-```task("name here"){
+```
+task("name here"){
 	step 1:
 		"text here",
 		"more text",

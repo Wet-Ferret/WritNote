@@ -3,6 +3,7 @@
  */
 body {
     font-family: 'Noto Sans', sans-serif;
+    background-color: darkgrey;
 }
 #header {
     background-color: chartreuse;
@@ -22,7 +23,7 @@ body {
 #header p {
     height: 1em;
 }
-input{
+textarea{
     /*background-color: aqua;*/
     /*border-color: black;*/
     /*border-style: solid;*/
@@ -30,7 +31,7 @@ input{
     width: 98%;
     height: 68em;
     text-align: left;
-
+    resize: none;
 }
 #user_form {
     text-align: left;

@@ -22,15 +22,15 @@ body {
 #header p {
     height: 1em;
 }
-/*input[type="text"] {*/
+input{
     /*background-color: aqua;*/
     /*border-color: black;*/
     /*border-style: solid;*/
     /*border: 50px;*/
-/*}*/
-input{
     width: 98%;
-    height: 75%;
+    height: 68em;
+    text-align: left;
+
 }
 #user_form {
     text-align: left;

@@ -14,12 +14,13 @@
 </head>
 <body>
     <div id="header"><p>[icon goes here] - <b>WritNote</b></p></div>
-
-    <form id="user_form">
-        <input type="text" name="content_body" id="user_input" onkeypress="changeText()" onkeyup="changeText()">
-    </form>
-    <form id="computer_form">
-        <input type="text" name="content_output" id="user_output" readonly>
-    </form>
+    <div id="work_area">
+        <form id="user_form">
+            <textarea name="content_body" id="user_input" onkeypress="changeText()" onkeyup="changeText()" />
+        </form>
+        <form id="computer_form">
+            <textarea name="content_output" id="user_output" readonly />
+        </form>
+    </div>
 </body>
 </html>

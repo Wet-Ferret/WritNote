@@ -1,5 +1,5 @@
 # WritNote
-<i>Copyright Wet-Ferret 2016</i>
+*Copyright Wet-Ferret 2016*
 
 ## Concept
 The concept of this project is to create a flexible,

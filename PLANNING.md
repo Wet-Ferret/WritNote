@@ -56,6 +56,8 @@ task("name here"){
 
 `"<text here>"` = text
 
+### Other Formatting
+
 Additional Properties could be specified as such
 
 `"<text here>".b();` = **bold text**

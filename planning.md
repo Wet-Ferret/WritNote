@@ -62,7 +62,7 @@ Additional Properties could be specified as such
 
 `"<text here>".i();` = *italics*
 
-`"<text here>".u();` = <u>underlined<u>
+`"<text here>".u();` = <u>underlined</u>
 
 `"<text here>".Ss();` = <sup>superscript<sup>
 

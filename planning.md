@@ -16,8 +16,7 @@ List are defined as such.
 ```listName: [
 	'item1',
 	'item2',
-];
-```
+];```
 
 ### Hyperlinks
 Hyperlinks are defined as such.

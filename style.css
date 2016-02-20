@@ -8,7 +8,7 @@ body {
 #header {
     background-color: chartreuse;
     text-align: center;
-    height: 3em;
+    height: 6%;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -20,8 +20,10 @@ body {
     bottom: 50%;
     color: white;
 }
-#header p {
-    height: 1em;
+form {
+    height: 93%;
+    position: relative;
+
 }
 textarea{
     /*background-color: aqua;*/
@@ -29,7 +31,7 @@ textarea{
     /*border-style: solid;*/
     /*border: 50px;*/
     width: 98%;
-    height: 67em;
+    height: 98%;
     text-align: left;
     resize: none;
 }

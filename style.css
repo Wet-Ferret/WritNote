@@ -5,9 +5,22 @@ body {
     font-family: 'Noto Sans', sans-serif;
 }
 #header {
-    background-color: green;
+    background-color: chartreuse;
     text-align: center;
+    height: 3em;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+
+}
+#header b {
+    top: 50%;
+    bottom: 50%;
     color: white;
+}
+#header p {
+    height;: 1em;
 }
 #user_form {
     text-align: left;

@@ -55,10 +55,16 @@ task("name here"){
 ```
 
 `"<text here>"` = text
+
 Additional Properties could be specified as such
+
 `"<text here>".b();` = bold text
+
 `"<text here>".i();` = italics
+
 `"<text here>".u();` = underlined
+
 `"<text here>".Ss();` = superscript
+
 `"<text here>".ss();` = subscript
 

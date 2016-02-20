@@ -16,7 +16,8 @@ List are defined as such.
 ```listName: [
 	'item1',
 	'item2',
-];```
+];
+```
 
 ### Hyperlinks
 Hyperlinks are defined as such.
@@ -26,13 +27,16 @@ Hyperlinks are defined as such.
 In the event that you need to put something like this down:
 ```Stick:
 	Long, Brown and Sticky,
-	Context: Terrible Jokes```
+	Context: Terrible Jokes
+```
 
 Use this syntax.
-//(d)"Stick":{
+
+```//(d)"Stick":{
 	"Long, Brown and Sticky".def(),
 	"Terrible Jokes".ctext(),
 };
+```
 
 ### Step-by-step
 Uses a switch like format to produce instructions to do a task, step-by-step
@@ -43,7 +47,8 @@ Uses a switch like format to produce instructions to do a task, step-by-step
 	step 2:
 		"some other text",
 		"MOAR TEXT",
-}```
+}
+```
 
 `"<text here>"` = text
 Additional Properties could be specified as such

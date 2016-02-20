@@ -20,11 +20,29 @@ body {
     color: white;
 }
 #header p {
-    height;: 1em;
+    height: 1em;
 }
+/*input[type="text"] {*/
+    /*background-color: aqua;*/
+    /*border-color: black;*/
+    /*border-style: solid;*/
+    /*border: 50px;*/
+/*}*/
+/*input{*/
+    /*width: 10px;*/
+    /*height: 10px;*/
+/*}*/
 #user_form {
     text-align: left;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 50%;
 }
 #computer_form {
     text-align: right;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    width: 50%;
 }

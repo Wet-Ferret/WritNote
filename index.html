@@ -2,14 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
     <title>WritNote</title>
+    <script language="javascript">
+        var changeText = function () {
+        console.log(document.getElementById('user_input').value.toUpperCase());
+        document.getElementById('user_output').value = document.getElementById('user_input').value.toUpperCase();
+    };
+    </script>
 </head>
 <body>
-    <div id="header">[icon goes here] - <b>WritNote</b></div>
+    <div id="header"><p>[icon goes here] - <b>WritNote</b></p></div>
 
     <form id="user_form">
-        <input type="text" name="content_body" id="user_input" onkeypress="console.log('key pressed')">
-        <input type="button" value="submit" onclick="console.log('button clicked')">
+        <input type="text" name="content_body" id="user_input" onkeypress="changeText()" onkeyup="changeText()">
     </form>
     <form id="computer_form">
         <input type="text" name="content_output" id="user_output" readonly>

@@ -19,14 +19,23 @@
             document.getElementById('user_output').value = e;
         }
     }
+    var lexer = new Lexer();
+    lexer.addRule(/[a-z\d]+/i, function (lexMe) {
+        return 'LETTER';
+    });
+    lexer.addRule(/[0-9\d]+/i, function (lexMe) {
+        return 'NUMBER';
+    });
     var doLexer = function () {
-        console.log('lexing');
-        var lexer = new Lexer();
-        lexer.addRule(/[a-f\d]+/i, function (lexMe) {
-            return 'HEX';
-        });
-        console.log(lexer.setInput('abc'));
-        console.log(lexer.lex());
+        lexer.setInput(document.getElementById('user_input').value);
+        for (i = 0; i < document.getElementById('user_input').value.length; i++) {
+            try {
+                document.getElementById('user_output').value = lexer.lex();
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
     }
     </script>
 </head>
@@ -34,11 +43,10 @@
     <div id="header"><p><img src="logo.png" /> <a href="index.html"><b>WritNote</b></a> - <a href="/about.html">About</a> </p></div>
     <div id="work_area">
         <form id="user_form">
-            <textarea name="content_body" id="user_input" onkeypress="useCalculator()" onkeyup="useCalculator()">This is a sensible default.</textarea>
+            <textarea name="content_body" id="user_input" onkeypress="doLexer()" onkeyup="doLexer()">This is a sensible default.</textarea>
         </form>
         <form id="computer_form">
             <textarea type="text" name="content_output" id="user_output" readonly></textarea>
-            <input type="button" onclick="doLexer()";
         </form>
 
     </div>

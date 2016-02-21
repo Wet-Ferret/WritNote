@@ -1,0 +1,28 @@
+{
+  "name": "WritNote",
+  "homepage": "https://github.com/Wet-Ferret/WritNote",
+  "authors": [
+    "Crispin <crispin@developster.io>",
+    "Ennis"
+  ],
+  "description": "A markup thing",
+  "main": "index.html",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "yui"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lexer": "~1.7.8"
+  }
+}

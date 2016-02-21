@@ -75,3 +75,6 @@ crashlytics-build.properties
 # Vim buffers
 *.swp
 # Created by .ignore support plugin (hsz.mobi)
+
+#Bower
+bower_components

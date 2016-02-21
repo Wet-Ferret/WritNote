@@ -15,12 +15,12 @@ lexer.addRule(/[a-zA-Z0-9]+/, function (lexeme) {
 );
 
 
-var doLexer = parseToMD();
 
-var parseToMD = function () {
+var doLexer = function () {
     var lexer = new Lexer();
     lexer.addRule(/[a-zA-Z0-9]+/, function (lexeme) {
         return lexeme;
     }
     )
 }
+

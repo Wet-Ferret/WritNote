@@ -1,20 +1,28 @@
 /**
  * Created by Ennis on 21/02/16.
  */
+// Initialize Lexer
 var lexer = new Lexer();
+// Add string handling
+lexer.addRule(/[a-zA-Z0-9]+/, function (lexeme) {
+        return arguments;
+    }
+);
+// Whitespace Ignore
+lexer.addRule(/\S+/, function (lexeme) {
+
+    }
+);
 
 
 var doLexer = function () {
-    // String handling
-    var lexer = new Lexer();
-    lexer.addRule(/[a-zA-Z0-9]+/, function (lexeme) {
-        return arguments;
+    lexer.setInput(document.getElementById('user_input').value);
+    for (i = 0; i < document.getElementById('user_input').value.length; i++) {
+        try {
+            document.getElementById('user_output').value = lexer.lex() + ' ' + i.toString();
+        } catch (e) {
+            console.log(e);
+        }
     }
-    );
-    // Whitespace Ignore
-    lexer.addRule(/\S+/, function (lexeme) {
-
-    }
-    );
 };
 

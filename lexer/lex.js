@@ -29,7 +29,7 @@ var changeText = function () {
 var doLexer = function () {
     for (i = 0; i < document.getElementById('user_input').value.length; i++) {
         try {
-            document.getElementById('user_output').value = lexer.lex();
+            document.getElementById('user_output').value = lexer.lex() + '\S';
         } catch (e) {
             console.log(e);
         }

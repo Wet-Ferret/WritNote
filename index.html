@@ -10,6 +10,9 @@
     <script type="application/javascript" src="./calculator.js"></script>
     <!-- Actual Parser -->
     <script type="application/javascript">
+        var changeText = function () {
+            document.getElementById('user_output').value = document.getElementById('user_input').value.toUpperCase();
+        }
         lexer = new Lexer();
         var doLexer = function () {
             for (i = 0; i < document.getElementById('user_input').value.length; i++) {
@@ -22,7 +25,9 @@
         };
     </script>
     <script type="application/javascript" src="./lexer/lex.js"></script>
-    <script type="application/javascript"></script>
+    <script type="application/javascript">
+
+    </script>
     <!-- Input Manager -->
     <!-- <script type="application/javascript">
         var changeText = function () {

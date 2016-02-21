@@ -8,6 +8,7 @@
     <title>WritNote</title>
     <script src="bower_components/lexer/lexer.js"></script>
     <script src="calculator.js"></script>
+    <--! Input Manager !-->
     <script language="javascript">
         var changeText = function () {
         document.getElementById('user_output').value = document.getElementById('user_input').value.toUpperCase();
@@ -19,6 +20,8 @@
             document.getElementById('user_output').value = e;
         }
     }
+        //Commenting out to prevent conflicts
+        /*
     var lexer = new Lexer();
     lexer.addRule(/[a-z\d]+/i, function (lexMe) {
         return 'LETTER';
@@ -37,7 +40,10 @@
         }
 
     }
+    */
     </script>
+    <--! Actual Parser !-->
+    <script src="lexer/lex.js"></script>
 </head>
 <body onload="changeText()">
     <div id="header"><p><img src="logo.png" /> <a href="index.html"><b>WritNote</b></a> - <a href="/about.html">About</a> </p></div>
@@ -47,6 +53,7 @@
         </form>
         <form id="computer_form">
             <textarea type="text" name="content_output" id="user_output" readonly></textarea>
+            <input type="button" onclick="doLexer()";
         </form>
 
     </div>

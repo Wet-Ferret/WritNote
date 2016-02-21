@@ -5,18 +5,18 @@
 var lexer = new Lexer();
 
 // Whitespace Ignore
-lexer.addRule(/\S+/, function (lexeme) {
+lexer.addRule(/\S+/, function () {
 
     }
 );
 // Add string handling
 lexer.addRule(/[a-zA-Z0-9]+/, function (lexeme) {
-        return lexeme.items;
+        return lexeme;
     }
 );
 // Integers
 lexer.addRule(/[0-9]+\.[0-9]+/, function (lexeme) {
-    return lexeme.items;
+    return lexeme;
     }
 );
 

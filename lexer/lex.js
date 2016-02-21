@@ -3,7 +3,8 @@
  */
 
 // Set lexer to read from user-input
-lexer.setInput(document.getElementById('user_output').value = lexer.lex());
+//i think it needs to be in index.html to work ~crispin
+lexer.setInput(document.getElementById('input').value = lexer.lex());
 
 // Whitespace Ignore
 lexer.addRule(/\s+/, function () {

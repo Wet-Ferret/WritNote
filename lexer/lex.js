@@ -10,12 +10,11 @@ var doLexer = function () {
     lexer.addRule(/[a-zA-Z0-9]+/, function (lexeme) {
         return arguments;
     }
-    )
+    );
     // Whitespace Ignore
     lexer.addRule(/\S+/, function (lexeme) {
 
     }
-    )
-
-}
+    );
+};
 

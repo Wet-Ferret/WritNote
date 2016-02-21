@@ -4,7 +4,7 @@
 // Initialize Lexer
 var lexer = new Lexer();
 // Set lexer to read from user-input
-lexer.setInput(document.getElementById('user_input').value);
+lexer.setInput(document.getElementById('user_output').value = lexer.lex());
 
 // Whitespace Ignore
 lexer.addRule(/\s+/, function () {

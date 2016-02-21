@@ -10,10 +10,7 @@
     <script type="application/javascript">
         //why is this here?
         // So that anything that uses it wont get broken because it's imported later so its better to do as soon as possible
-        lexer = new Lexer(function () {
-            console.log("Unexpected character at index " + (this.index - 1) + ": " + char);
-            throw new Error("Unexpected character at index " + (this.index - 1) + ": " + char);
-        });
+        lexer = new Lexer();
         function changeText () {
             document.getElementById('user_output').value = lexer.lex;
         }
@@ -21,14 +18,16 @@
     <script type="application/javascript" src="./lexer/lex.js"></script>
     <script type="application/javascript">
         function doLexer () {
+            lexer.setInput(document.getElementById('user_input').value);
+            document.getElementById('user_output').value = lexer.lex;
             for (i = 0; i < document.getElementById('user_input').value.length; i++) {
                 try {
-                    document.getElementById('user_output').value = lexer.lex() + '\S';
+                    document.getElementById('user_output').value = lexer.returnValue + '\S';
                 } catch (e) {
                     console.log(e);
                 }
             }
-        }
+        };
     </script>
     <!-- Input Manager -->
     <!-- <script type="application/javascript">

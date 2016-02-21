@@ -7,13 +7,15 @@
 
 
 // Whitespace Ignore
-lexer.addRule(/\s+/, function () {
+lexer.addRule(/\S+/, function () {
 
     }
 );
 // Add string handling
 lexer.addRule(/[a-zA-Z0-9]+/, function (lexeme) {
-        return lexeme;
+        for (var i = 1; i < lexeme.length; i++) {
+            return $.i;
+        }
     }
 );
 // Integers

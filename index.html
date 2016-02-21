@@ -14,7 +14,7 @@
             document.getElementById('user_output').value = lexer.lex;
         };
         lexer = new Lexer();
-        var doLexer = function () {
+        function doLexer () {
             for (i = 0; i < document.getElementById('user_input').value.length; i++) {
                 try {
                     document.getElementById('user_output').value = lexer.lex() + '\S';
@@ -22,7 +22,7 @@
                     console.log(e);
                 }
             }
-        };
+        }
     </script>
     <script type="application/javascript" src="./lexer/lex.js"></script>
     <!-- Input Manager -->
@@ -50,7 +50,7 @@
     */
     </script> -->
 </head>
-<body onload="doLexer()">
+<body>
     <div id="header"><p><img src="logo.png" /> <a href="index.html"><b>WritNote</b></a> - <a href="/about.html">About</a> </p></div>
     <div id="work_area">
         <form id="user_form">

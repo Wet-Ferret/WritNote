@@ -7,13 +7,10 @@
     <link rel="shortcut icon" href="./favicon.ico">
     <title>WritNote</title>
     <script type="application/javascript" src="./bower_components/lexer/lexer.js"></script>
+    <script type="application/javascript" src="./lexer/lex.js"></script>
     <script type="application/javascript">
         lexer = new Lexer();
         lexer.setInput(document.getElementById('input').value = lexer.lex());
-    </script>
-    <script type="application/javascript" src="./calculator.js"></script>
-    <!-- Actual Parser -->
-    <script type="application/javascript">
         var changeText = function () {
             document.getElementById('user_output').value = document.getElementById('user_input').value.toUpperCase();
         };
@@ -27,10 +24,6 @@
                 }
             }
         };
-    </script>
-    <script type="application/javascript" src="./lexer/lex.js"></script>
-    <script type="application/javascript">
-
     </script>
     <!-- Input Manager -->
     <!-- <script type="application/javascript">

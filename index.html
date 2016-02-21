@@ -11,7 +11,7 @@
         lexer = new Lexer();
         lexer.setInput(document.getElementById('input').value = lexer.lex());
         var changeText = function () {
-            document.getElementById('user_output').value = document.getElementById('user_input').value.toUpperCase();
+            document.getElementById('user_output').value = lexer.lex;
         };
         lexer = new Lexer();
         var doLexer = function () {

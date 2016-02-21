@@ -1,6 +1,7 @@
 /**
  * Created by crispin on 20/02/16.
  */
+/* Applicable to all pages. */
 body {
     font-family: 'Noto Sans', sans-serif;
     background-color: darkgrey;
@@ -8,28 +9,31 @@ body {
 #header {
     background-color: chartreuse;
     text-align: center;
-    height: 3em;
+    height: 6%;
     position: absolute;
     top: 0px;
     left: 0px;
     width: 100%;
 
 }
-#header b {
+#header a {
     top: 50%;
     bottom: 50%;
     color: white;
 }
-#header p {
-    height: 1em;
+#header img {
+    top: 50%;
+    bottom: 50%;
+}
+/* Applicable to only the app page. */
+form {
+    height: 93%;
+    position: relative;
+
 }
 textarea{
-    /*background-color: aqua;*/
-    /*border-color: black;*/
-    /*border-style: solid;*/
-    /*border: 50px;*/
     width: 98%;
-    height: 67em;
+    height: 98%;
     text-align: left;
     resize: none;
 }
@@ -49,6 +53,15 @@ textarea{
     right: 0%;
     width: 50%;
 }
-#tidy {
 
+/* Applicable to only the About pages */
+
+#text_content {
+    background-color: white;
+    top: 15%;
+    padding-top: 3%;
+    padding-bottom: 15%;
+}
+#text_content h2 {
+    text-align: center;
 }

@@ -4,7 +4,7 @@
 
 // Set lexer to read from user-input
 //i think it needs to be in index.html to work ~crispin
-lexer.setInput(document.getElementById('input').value = lexer.lex());
+
 
 // Whitespace Ignore
 lexer.addRule(/\s+/, function () {
@@ -21,9 +21,6 @@ lexer.addRule(/[0-9]+\.[0-9]+/, function (lexeme) {
     return lexeme;
     }
 );
-// Change text function
-var changeText = function () {
-    doLexer();
-};
+
 
 

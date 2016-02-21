@@ -7,12 +7,16 @@
     <link rel="shortcut icon" href="./favicon.ico">
     <title>WritNote</title>
     <script type="application/javascript" src="./bower_components/lexer/lexer.js"></script>
+    <script type="application/javascript">
+        lexer = new Lexer();
+        lexer.setInput(document.getElementById('input').value = lexer.lex());
+    </script>
     <script type="application/javascript" src="./calculator.js"></script>
     <!-- Actual Parser -->
     <script type="application/javascript">
         var changeText = function () {
             document.getElementById('user_output').value = document.getElementById('user_input').value.toUpperCase();
-        }
+        };
         lexer = new Lexer();
         var doLexer = function () {
             for (i = 0; i < document.getElementById('user_input').value.length; i++) {
@@ -53,7 +57,7 @@
     */
     </script> -->
 </head>
-<body onload="changeText()"> <!-- this is no longer a function ~crispin -->
+<body onload="changeText()">
     <div id="header"><p><img src="logo.png" /> <a href="index.html"><b>WritNote</b></a> - <a href="/about.html">About</a> </p></div>
     <div id="work_area">
         <form id="user_form">

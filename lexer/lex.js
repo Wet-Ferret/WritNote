@@ -5,7 +5,7 @@
 var lexer = new Lexer();
 
 // Whitespace Ignore
-lexer.addRule(/\S+/, function (lexeme) {
+lexer.addRule(/\S+/, function () {
 
     }
 );

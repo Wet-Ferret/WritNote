@@ -11,10 +11,15 @@
     <!-- Actual Parser -->
     <script type="application/javascript" src="lexer/lex.js"></script>
     <!-- Input Manager -->
+    <script type="application/javascript">
+        var changeText = function () {
+            doLexer();
+        }
+    </script>
     <!-- <script type="application/javascript">
         var changeText = function () {
         document.getElementById('user_output').value = document.getElementById('user_input').value.toUpperCase();
-    };s
+    };
     var useCalculator = function () {
         try {
             document.getElementById('user_output').value = calculator.parse(document.getElementById('user_input').value);

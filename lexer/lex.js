@@ -3,9 +3,11 @@
  */
 // Initialize Lexer
 var lexer = new Lexer();
+// Set lexer to read from user-input
+lexer.setInput(document.getElementById('user_input').value);
 
 // Whitespace Ignore
-lexer.addRule(/\S+/, function (lexeme) {
+lexer.addRule(/\s+/, function () {
 
     }
 );
@@ -22,10 +24,9 @@ lexer.addRule(/[0-9]+\.[0-9]+/, function (lexeme) {
 
 
 var doLexer = function () {
-    lexer.setInput(document.getElementById('user_input').value);
     for (i = 0; i < document.getElementById('user_input').value.length; i++) {
         try {
-            document.getElementById('user_output').value = lexer.lex() + ' ' + i.toString();
+            document.getElementById('user_output').value = lexer.lex();
         } catch (e) {
             console.log(e);
         }

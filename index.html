@@ -10,7 +10,10 @@
     <script type="application/javascript">
         //why is this here?
         // So that anything that uses it wont get broken because it's imported later so its better to do as soon as possible
-        lexer = new Lexer();
+        lexer = new Lexer(function () {
+            console.log("Unexpected character at index " + (this.index - 1) + ": " + char);
+            throw new Error("Unexpected character at index " + (this.index - 1) + ": " + char);
+        });
         function changeText () {
             document.getElementById('user_output').value = lexer.lex;
         }

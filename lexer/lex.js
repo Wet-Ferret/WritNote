@@ -11,12 +11,12 @@ lexer.addRule(/\S+/, function (lexeme) {
 );
 // Add string handling
 lexer.addRule(/[a-zA-Z0-9]+/, function (lexeme) {
-        return lexeme.items;
+        return lexeme;
     }
 );
 // Integers
 lexer.addRule(/[0-9]+\.[0-9]+/, function (lexeme) {
-    return lexeme.items;
+    return lexeme;
     }
 );
 

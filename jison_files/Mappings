@@ -1,0 +1,33 @@
+listName: [ -> <ul>
+    'item1', -> <li>item1</li>
+    'item2', -> <li>item2</li>
+]            -> </ul>
+
+//(h1)  Text here -> # Text here
+//(h2) Text here -> ## Text here
+//(h3) Text here -> ### Text here
+//(h4) Text here -> #### Text here
+
+"link".hl(url) ->   [link](url)
+
+//(d)"Stick":{
+	"Long, Brown and Sticky".def(),
+	"Terrible Jokes".ctext(),
+};
+
+|
+˘
+### Stick
+    <ul>
+        <li>Definition: *.def()</li>
+        <li>Context: *.ctext()</li>
+    </ul>
+
+
+task(name) { -> ### name
+                <ol>
+    step 1:     <li>
+                    <h1>Step 1</h1>
+        "text",     <p>text</p>
+        "more text" <p>more text>
+                </li>

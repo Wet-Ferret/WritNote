@@ -1,8 +1,7 @@
 /**
  * Created by Ennis on 21/02/16.
  */
-// Initialize Lexer
-var lexer = new Lexer();
+
 // Set lexer to read from user-input
 lexer.setInput(document.getElementById('user_output').value = lexer.lex());
 
@@ -26,13 +25,4 @@ var changeText = function () {
     doLexer();
 };
 
-var doLexer = function () {
-    for (i = 0; i < document.getElementById('user_input').value.length; i++) {
-        try {
-            document.getElementById('user_output').value = lexer.lex() + '\S';
-        } catch (e) {
-            console.log(e);
-        }
-    }
-};
 

@@ -5,7 +5,7 @@
 var lexer = new Lexer();
 // Add string handling
 lexer.addRule(/[a-zA-Z0-9]+/, function (lexeme) {
-        return lexeme;
+        return $$;
     }
 );
 // Whitespace Ignore

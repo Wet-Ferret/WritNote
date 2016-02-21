@@ -24,13 +24,18 @@
         return 'LETTER';
     });
     lexer.addRule(/[0-9\d]+/i, function (lexMe) {
+        console.log('NUMBER')
         return 'NUMBER';
     });
     var doLexer = function () {
+        console.log(lexer);
         lexer.setInput(document.getElementById('user_input').value);
         for (i = 0; i < document.getElementById('user_input').value.length; i++) {
             try {
+                console.log(lexer);
+                console.log(lexer.lex() + ' ' + i.toString());
                 document.getElementById('user_output').value = lexer.lex() + ' ' + i.toString();
+
             } catch (e) {
                 console.log(e);
             }
@@ -43,7 +48,7 @@
     <div id="header"><p><img src="logo.png" /> <a href="index.html"><b>WritNote</b></a> - <a href="/about.html">About</a> </p></div>
     <div id="work_area">
         <form id="user_form">
-            <textarea name="content_body" id="user_input" onkeypress="doLexer()" onkeyup="doLexer()">This is a sensible default.</textarea>
+            <textarea name="content_body" id="user_input" onkeypress="doLexer()" onkeyup="doLexer()">a</textarea>
         </form>
         <form id="computer_form">
             <textarea type="text" name="content_output" id="user_output" readonly></textarea>

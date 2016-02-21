@@ -6,9 +6,12 @@
     <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <title>WritNote</title>
-    <script src="bower_components/lexer/lexer.js"></script>
-    <script src="calculator.js"></script>
-    <script language="javascript">
+    <script type="application/javascript" src="bower_components/lexer/lexer.js"></script>
+    <script type="application/javascript" src="calculator.js"></script>
+    <!-- Actual Parser -->
+    <script type="application/javascript" src="lexer/lex.js"></script>
+    <!-- Input Manager -->
+    <script type="application/javascript">
         var changeText = function () {
         document.getElementById('user_output').value = document.getElementById('user_input').value.toUpperCase();
     };
@@ -19,6 +22,8 @@
             document.getElementById('user_output').value = e;
         }
     }
+        //Commenting out to prevent conflicts
+        /*
     var lexer = new Lexer();
     lexer.addRule(/[a-z\d]+/i, function (lexMe) {
         return 'LETTER';
@@ -42,6 +47,7 @@
         }
 
     }
+    */
     </script>
 </head>
 <body onload="changeText()">
@@ -52,6 +58,7 @@
         </form>
         <form id="computer_form">
             <textarea type="text" name="content_output" id="user_output" readonly></textarea>
+            <input type="button" onclick="doLexer()">
         </form>
 
     </div>

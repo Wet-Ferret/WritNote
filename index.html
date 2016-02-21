@@ -8,11 +8,15 @@
     <title>WritNote</title>
     <script type="application/javascript" src="./bower_components/lexer/lexer.js"></script>
     <script type="application/javascript">
+        //why is this here?
         lexer = new Lexer();
+        //also there's nothing to lex
         lexer.setInput(document.getElementById('input').value = lexer.lex());
         var changeText = function () {
             document.getElementById('user_output').value = lexer.lex;
         };
+        //i dont think the stuff from lex.js is being carried over
+        //also i just bled on my computer
         lexer = new Lexer();
         function doLexer () {
             for (i = 0; i < document.getElementById('user_input').value.length; i++) {

@@ -2,20 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
     <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <title>WritNote</title>
-    <script type="application/javascript" src="bower_components/lexer/lexer.js"></script>
-    <script type="application/javascript" src="calculator.js"></script>
+    <script type="application/javascript" src="./bower_components/lexer/lexer.js"></script>
+    <script type="application/javascript" src="./calculator.js"></script>
     <!-- Actual Parser -->
-    <script type="application/javascript" src="lexer/lex.js"></script>
+    <script type="application/javascript" src="./lexer/lex.js"></script>
     <!-- Input Manager -->
-    <script type="application/javascript">
-        var changeText = function () {
-            doLexer();
-        };
-    </script>
     <!-- <script type="application/javascript">
         var changeText = function () {
         document.getElementById('user_output').value = document.getElementById('user_input').value.toUpperCase();
@@ -44,10 +39,10 @@
     <div id="header"><p><img src="logo.png" /> <a href="index.html"><b>WritNote</b></a> - <a href="/about.html">About</a> </p></div>
     <div id="work_area">
         <form id="user_form">
-            <textarea name="content_body" id="user_input" onkeypress="doLexer()" onkeyup="doLexer()">This is a sensible default.</textarea>
+            <textarea title="Text Input" name="content_body" id="user_input" onkeypress="doLexer()" onkeyup="doLexer()">This is a sensible default.</textarea>
         </form>
         <form id="computer_form">
-            <textarea type="text" name="content_output" id="user_output" readonly></textarea>
+            <textarea title="Text Output" name="content_output" id="user_output" readonly></textarea>
             <input type="button" onclick="doLexer()">
         </form>
 

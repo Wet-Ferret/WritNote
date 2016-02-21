@@ -21,7 +21,10 @@ lexer.addRule(/[0-9]+\.[0-9]+/, function (lexeme) {
     return lexeme;
     }
 );
-
+// Change text function
+var changeText = function () {
+    doLexer();
+};
 
 var doLexer = function () {
     for (i = 0; i < document.getElementById('user_input').value.length; i++) {

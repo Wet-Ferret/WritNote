@@ -25,7 +25,7 @@ var doLexer = function () {
     lexer.setInput(document.getElementById('user_input').value);
     for (i = 0; i < document.getElementById('user_input').value.length; i++) {
         try {
-            document.getElementById('user_output').value = lexer.lex() + ' ' + i.toString();
+            document.getElementById('user_output').value = lexer.lex() + i.toString();
         } catch (e) {
             console.log(e);
         }

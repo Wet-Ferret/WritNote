@@ -8,6 +8,8 @@
     <title>WritNote</title>
     <script src="bower_components/lexer/lexer.js"></script>
     <script src="calculator.js"></script>
+    <--! Actual Parser !-->
+    <script src="lexer/lex.js"></script>
     <--! Input Manager !-->
     <script language="javascript">
         var changeText = function () {
@@ -42,8 +44,6 @@
     }
     */
     </script>
-    <--! Actual Parser !-->
-    <script src="lexer/lex.js"></script>
 </head>
 <body onload="changeText()">
     <div id="header"><p><img src="logo.png" /> <a href="index.html"><b>WritNote</b></a> - <a href="/about.html">About</a> </p></div>

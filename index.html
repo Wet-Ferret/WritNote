@@ -2,16 +2,136 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
     <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" href="./favicon.ico">
     <title>WritNote</title>
-    <script type="application/javascript" src="bower_components/lexer/lexer.js"></script>
-    <script type="application/javascript" src="calculator.js"></script>
-    <!-- Actual Parser -->
-    <script type="application/javascript" src="lexer/lex.js"></script>
-    <!-- Input Manager -->
+    <script type="application/javascript" src="./bower_components/lexer/lexer.js"></script>
     <script type="application/javascript">
+        // Initialize Lexer
+        var lexer = new Lexer();
+        var quoteContent;
+        var output = "";
+        //Skip Whitespace
+        lexer.addRule(
+                /.?\s/,
+                function (lexeme) {
+                    console.log("FUCKING WHITESPACE " + lexeme);
+                    return " ";
+                }
+        )
+        // Add rules
+        lexer.addRule(
+                /[.*?]+/,
+                function (lexeme) {
+                    console.log("Word " + lexeme);
+                    output += lexeme + " ";
+                    return lexeme;
+                }
+        );
+
+        lexer.addRule (
+                /[0-9]+/,
+                function (lexeme) {
+                    console.log("INT " + lexeme);
+                    output += lexeme + ' ';
+                    return lexeme;
+                }
+        );
+        lexer.addRule(
+                /[a-zA-Z"']+/,
+                function (lexeme) {
+                    console.log("STRING " + lexeme);
+                    output += lexeme + ' ';
+                    return lexeme;
+                }
+        );
+        lexer.addRule(
+                /_\*.*\*_+/,
+                function (lexeme) {
+                    lexeme = lexeme.replace(/_\*/, '');
+                    lexeme = lexeme.replace(/\*_/, '');
+                    console.log("BOTH " + lexeme);
+                    output += '**_' + lexeme + '_**' + ' ';
+                    return lexeme;
+                }
+        );
+        //italics
+        lexer.addRule(
+                /_.*_+/,
+                function (lexeme) {
+                    lexeme = lexeme.replace(/_/g, '')
+                    console.log("ITALICS " + lexeme);
+                    output += '*' + lexeme + '*' + ' ';
+                    return lexeme;
+                }
+        );
+        //bold
+        lexer.addRule(
+                /\*.*\*+/,
+                function (lexeme) {
+                    lexeme = lexeme.replace(/\*/g, '')
+                    console.log("BOLD " + lexeme);
+                    output += '**' + lexeme + '**' + ' ';
+                    return lexeme;
+                }
+        );
+        //bold and italics
+
+        //strikethrough
+        lexer.addRule(
+                /~.*~+/,
+                function (lexeme) {
+                    lexeme = lexeme.replace(/~/g, '')
+                    console.log("STR " + lexeme);
+                    output += '~~' + lexeme + '~~' + ' ';
+                    return lexeme;
+                }
+        );
+    </script>
+    <!-- Actual lex execution -->
+    <script type="application/javascript">
+        function doLexer () {
+            var input = document.getElementById('user_input').value;
+            console.log('first input ' + input);
+            input = input.split(" ");
+            for (var i = 0; i < input.length; i++) {
+                //lexer.input = input[i];
+                lexer.setInput(input[i]);
+                console.log('input ' + input + ' ' + i);
+                //document.getElementById('user_output').value = lexer.lex();
+                lexer.lex();
+                console.log("whatever " + output);
+            }
+            document.getElementById('user_output').value = output;
+            output = '';
+        }
+    </script>
+    <!--<script type="application/javascript">
+        //why is this here?
+        // So that anything that uses it wont get broken because it's imported later so its better to do as soon as possible
+        lexer = new Lexer();
+        function changeText () {
+            document.getElementById('user_output').value = lexer.lex;
+        }
+    </script>
+    <script type="application/javascript" src="./lexer/lex.js"></script>
+    &lt;!&ndash; I might be wrong, but I don't think anything from lex.js is actually being used. &ndash;&gt;
+    <script type="application/javascript">
+        function doLexer () {
+            lexer.setInput(document.getElementById('user_input').value);
+            document.getElementById('user_output').value = lexer.lex;
+            for (i = 0; i < document.getElementById('user_input').value.length; i++) {
+                try {
+                    document.getElementById('user_output').value = lexer.returnValue + '\S';
+                } catch (e) {
+                    console.log(e);
+                }
+            }
+        };
+    </script>
+    &lt;!&ndash; Input Manager &ndash;&gt;
+    &lt;!&ndash; <script type="application/javascript">
         var changeText = function () {
         document.getElementById('user_output').value = document.getElementById('user_input').value.toUpperCase();
     };
@@ -32,32 +152,18 @@
         console.log('NUMBER')
         return 'NUMBER';
     });
-    var doLexer = function () {
-        console.log(lexer);
-        lexer.setInput(document.getElementById('user_input').value);
-        for (i = 0; i < document.getElementById('user_input').value.length; i++) {
-            try {
-                console.log(lexer);
-                console.log(lexer.lex() + ' ' + i.toString());
-                document.getElementById('user_output').value = lexer.lex() + ' ' + i.toString();
 
-            } catch (e) {
-                console.log(e);
-            }
-        }
 
-    }
     */
-    </script>
+    </script> &ndash;&gt;-->
 </head>
-<body onload="changeText()">
+<body>
     <div id="header"><p><img src="logo.png" /> <a href="index.html"><b>WritNote</b></a> - <a href="/about.html">About</a> </p></div>
     <div id="work_area">
         <form id="user_form">
-            <textarea name="content_body" id="user_input" onkeypress="doLexer()" onkeyup="doLexer()">a</textarea>
         </form>
         <form id="computer_form">
-            <textarea type="text" name="content_output" id="user_output" readonly></textarea>
+            <textarea title="Text Output" name="content_output" id="user_output" readonly></textarea>
             <input type="button" onclick="doLexer()">
         </form>
 

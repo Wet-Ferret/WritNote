@@ -13,7 +13,7 @@
 
         // Add rules
         lexer.addRule(
-                /"[a-zA-Z0-9]+"/,
+                /"[a-zA-Z0-9\s]+"/,
                 function (lexeme) {
                     console.log("STRING IN QUOTES");
                     return "STRING IN QUOTES";
@@ -26,11 +26,19 @@
                     return "INT";
                 }
         );
+        lexer.addRule(
+                /[a-zA-Z]+/,
+                function (lexeme) {
+                    console.log("STRING");
+                    return (lexeme);
+                }
+        );
     </script>
     <!-- Actual lex execution -->
     <script type="application/javascript">
         function doLexer () {
-            lexer.setInput(document.getElementById('user_input').value).lex();
+            lexer.setInput(document.getElementById('user_input').value);
+            document.getElementById('user_output').value = lexer.lex();
         }
     </script>
     <!--<script type="application/javascript">

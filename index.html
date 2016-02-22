@@ -8,6 +8,32 @@
     <title>WritNote</title>
     <script type="application/javascript" src="./bower_components/lexer/lexer.js"></script>
     <script type="application/javascript">
+        // Initialize Lexer
+        var lexer = new Lexer();
+
+        // Add rules
+        lexer.addRule(
+                /"[a-zA-Z0-9]+"/,
+                function (lexeme) {
+                    console.log("STRING IN QUOTES");
+                    return "STRING IN QUOTES";
+                }
+        );
+        lexer.addRule (
+                /[0-9]+/,
+                function (lexeme) {
+                    console.log("INT");
+                    return "INT";
+                }
+        );
+    </script>
+    <!-- Actual lex execution -->
+    <script type="application/javascript">
+        function doLexer () {
+            lexer.setInput(document.getElementById('user_input').value).lex();
+        }
+    </script>
+    <!--<script type="application/javascript">
         //why is this here?
         // So that anything that uses it wont get broken because it's imported later so its better to do as soon as possible
         lexer = new Lexer();
@@ -16,7 +42,7 @@
         }
     </script>
     <script type="application/javascript" src="./lexer/lex.js"></script>
-    <!-- I might be wrong, but I don't think anything from lex.js is actually being used. -->
+    &lt;!&ndash; I might be wrong, but I don't think anything from lex.js is actually being used. &ndash;&gt;
     <script type="application/javascript">
         function doLexer () {
             lexer.setInput(document.getElementById('user_input').value);
@@ -30,8 +56,8 @@
             }
         };
     </script>
-    <!-- Input Manager -->
-    <!-- <script type="application/javascript">
+    &lt;!&ndash; Input Manager &ndash;&gt;
+    &lt;!&ndash; <script type="application/javascript">
         var changeText = function () {
         document.getElementById('user_output').value = document.getElementById('user_input').value.toUpperCase();
     };
@@ -53,7 +79,7 @@
     });
 
     */
-    </script> -->
+    </script> &ndash;&gt;-->
 </head>
 <body>
     <div id="header"><p><img src="logo.png" /> <a href="index.html"><b>WritNote</b></a> - <a href="/about.html">About</a> </p></div>

@@ -21,7 +21,7 @@
         )
         // Add rules
         lexer.addRule(
-                /"[a-zA-Z0-9\s]+"/,
+                /"[a-zA-Z0-9$&+,:;=?@#|'<>.^*()%!\-\s]+"/,
                 function (lexeme) {
                     console.log("Quoted")
                     return lexeme;

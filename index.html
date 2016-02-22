@@ -11,11 +11,12 @@
         // Initialize Lexer
         var lexer = new Lexer();
         var quoteContent;
+        var output = "";
         //Skip Whitespace
         lexer.addRule(
                 /.?\s/,
                 function (lexeme) {
-                    console.log("FUCKING WHITESPACE");
+                    console.log("FUCKING WHITESPACE " + lexeme);
                     return " ";
                 }
         )
@@ -23,7 +24,8 @@
         lexer.addRule(
                 /[.*?]+/,
                 function (lexeme) {
-                    console.log("Word");
+                    console.log("Word " + lexeme);
+                    output += lexeme + " ";
                     return lexeme;
                 }
         );
@@ -31,14 +33,58 @@
         lexer.addRule (
                 /[0-9]+/,
                 function (lexeme) {
-                    console.log("INT");
+                    console.log("INT " + lexeme);
+                    output += lexeme + ' ';
                     return lexeme;
                 }
         );
         lexer.addRule(
-                /[a-zA-Z]+/,
+                /[a-zA-Z"']+/,
                 function (lexeme) {
-                    console.log("STRING");
+                    console.log("STRING " + lexeme);
+                    output += lexeme + ' ';
+                    return lexeme;
+                }
+        );
+        lexer.addRule(
+                /_\*.*\*_+/,
+                function (lexeme) {
+                    lexeme = lexeme.replace(/_\*/, '');
+                    lexeme = lexeme.replace(/\*_/, '');
+                    console.log("BOTH " + lexeme);
+                    output += '**_' + lexeme + '_**' + ' ';
+                    return lexeme;
+                }
+        );
+        //italics
+        lexer.addRule(
+                /_.*_+/,
+                function (lexeme) {
+                    lexeme = lexeme.replace(/_/g, '')
+                    console.log("ITALICS " + lexeme);
+                    output += '*' + lexeme + '*' + ' ';
+                    return lexeme;
+                }
+        );
+        //bold
+        lexer.addRule(
+                /\*.*\*+/,
+                function (lexeme) {
+                    lexeme = lexeme.replace(/\*/g, '')
+                    console.log("BOLD " + lexeme);
+                    output += '**' + lexeme + '**' + ' ';
+                    return lexeme;
+                }
+        );
+        //bold and italics
+
+        //strikethrough
+        lexer.addRule(
+                /~.*~+/,
+                function (lexeme) {
+                    lexeme = lexeme.replace(/~/g, '')
+                    console.log("STR " + lexeme);
+                    output += '~~' + lexeme + '~~' + ' ';
                     return lexeme;
                 }
         );
@@ -47,14 +93,18 @@
     <script type="application/javascript">
         function doLexer () {
             var input = document.getElementById('user_input').value;
-            console.log(input);
+            console.log('first input ' + input);
             input = input.split(" ");
-            for (var i = 1; i < input.length; i++) {
-                lexer.input = input[i];
-                console.log(input);
-                document.getElementById('user_output').value = lexer.lex();
-                console.log(lexer.lex.token);
+            for (var i = 0; i < input.length; i++) {
+                //lexer.input = input[i];
+                lexer.setInput(input[i]);
+                console.log('input ' + input + ' ' + i);
+                //document.getElementById('user_output').value = lexer.lex();
+                lexer.lex();
+                console.log("whatever " + output);
             }
+            document.getElementById('user_output').value = output;
+            output = '';
         }
     </script>
     <!--<script type="application/javascript">

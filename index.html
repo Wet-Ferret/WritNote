@@ -13,7 +13,7 @@
         var quoteContent;
         //Skip Whitespace
         lexer.addRule(
-                /.??\s/,
+                /.?\s/,
                 function (lexeme) {
                     console.log("FUCKING WHITESPACE");
                     return " ";
@@ -21,9 +21,9 @@
         )
         // Add rules
         lexer.addRule(
-                /"[a-zA-Z0-9$&+,:;=?@#|'<>.^*()%!\-\s]+"/,
+                /[.*?]+/,
                 function (lexeme) {
-                    console.log("Quoted")
+                    console.log("Word");
                     return lexeme;
                 }
         );
@@ -39,7 +39,7 @@
                 /[a-zA-Z]+/,
                 function (lexeme) {
                     console.log("STRING");
-                    return (lexeme);
+                    return lexeme;
                 }
         );
     </script>
@@ -48,11 +48,12 @@
         function doLexer () {
             var input = document.getElementById('user_input').value;
             console.log(input);
-            input = input.split(/[\s]/);
+            input = input.split(" ");
             for (var i = 1; i < input.length; i++) {
                 lexer.input = input[i];
                 console.log(input);
                 document.getElementById('user_output').value = lexer.lex();
+                console.log(lexer.lex.token);
             }
         }
     </script>

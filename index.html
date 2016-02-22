@@ -10,20 +10,29 @@
     <script type="application/javascript">
         // Initialize Lexer
         var lexer = new Lexer();
-
+        var quoteContent;
+        //Skip Whitespace
+        lexer.addRule(
+                /.??\s/,
+                function (lexeme) {
+                    console.log("FUCKING WHITESPACE");
+                    return " ";
+                }
+        )
         // Add rules
         lexer.addRule(
                 /"[a-zA-Z0-9\s]+"/,
                 function (lexeme) {
-                    console.log("STRING IN QUOTES");
-                    return "STRING IN QUOTES";
+                    console.log("Quoted")
+                    return lexeme;
                 }
         );
+
         lexer.addRule (
                 /[0-9]+/,
                 function (lexeme) {
                     console.log("INT");
-                    return "INT";
+                    return lexeme;
                 }
         );
         lexer.addRule(
@@ -37,8 +46,14 @@
     <!-- Actual lex execution -->
     <script type="application/javascript">
         function doLexer () {
-            lexer.setInput(document.getElementById('user_input').value);
-            document.getElementById('user_output').value = lexer.lex();
+            var input = document.getElementById('user_input').value;
+            console.log(input);
+            input = input.split(/[\s]/);
+            for (var i = 1; i < input.length; i++) {
+                lexer.input = input[i];
+                console.log(input);
+                document.getElementById('user_output').value = lexer.lex();
+            }
         }
     </script>
     <!--<script type="application/javascript">
@@ -93,7 +108,7 @@
     <div id="header"><p><img src="logo.png" /> <a href="index.html"><b>WritNote</b></a> - <a href="/about.html">About</a> </p></div>
     <div id="work_area">
         <form id="user_form">
-            <textarea title="Text Input" name="content_body" id="user_input" onchange="doLexer()">This is a sensible default.</textarea>
+            <textarea title="Text Input" name="content_body" id="user_input" onkeyup="doLexer()">This is a sensible default.</textarea>
         </form>
         <form id="computer_form">
             <textarea title="Text Output" name="content_output" id="user_output" readonly></textarea>
